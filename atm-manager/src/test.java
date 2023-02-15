@@ -61,5 +61,24 @@ public class test {
         boolean test2 = x < 3
             ? true
             : false;
+
+        for(int i = 0; i < 5; i++) {
+            ///......
+        }
+
+
+        //for (:
+          //   ) {
+
+        //}
+        boolean condition = false;
+
+        while(true){
+            do {
+                break;
+            }while(true);
+
+        }
+
     }
 }
