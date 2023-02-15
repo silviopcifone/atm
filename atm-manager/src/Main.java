@@ -25,6 +25,10 @@ public class Main {
                 break;
             case 3:
                 System.out.println("Inserisci l'importo da depositare");
+                depositAmount = scan.nextInt();
+                System.out.println("Hai depositato " + depositAmount);
+                balance = balance + depositAmount;
+                System.out.println("Il tuo nuovo saldo è " + balance);
                 break;
             case 4:
                 System.out.println("Arrivederci");
