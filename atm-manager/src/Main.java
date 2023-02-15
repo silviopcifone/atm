@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import static java.lang.System.exit;
+
 public class Main {
     public static void main(String[] args) {
        double balance = 10000;
@@ -24,13 +26,18 @@ public class Main {
 
             case 2: System.out.println("PRELIEVO \n Quale cifra vuoi prelevare?");
                     withdrawAmount = scanner.nextInt();
+                    balance -= withdrawAmount;
+                    System.out.println("\nOra il tuo bilancio è di: "+ balance);
                     break;
 
             case 3: System.out.println("DEPOSITO \n Quale cifra vuoi depositare?:");
                     depositAmount = scanner.nextInt();
+                    balance += depositAmount;
+                    System.out.println("\nOra il tuo bilancio è di: "+ balance);
                     break;
 
             case 4: System.out.println("USCITA IN CORSO... ");
+                    exit(-1);
                     break;
 
             default:System.out.println("OPERAZIONE NON CONSENTITA");
