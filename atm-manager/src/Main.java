@@ -8,8 +8,10 @@ public class Main {
         int withdrawAmount = 0;
         double depositAmount = 0;
         int choice = 0;
+
+        System.out.println("\n\nBENVENUTO!");
+
         while (true) {
-            System.out.println("\n\nBenvenuto!");
             Scanner scanner = new Scanner(System.in);
             System.out.println("\nSeleziona l' operazione che vuoi eseguire:\n" +
                     "1 - Controlla bilancio\n" +
