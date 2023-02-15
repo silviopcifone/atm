@@ -16,9 +16,14 @@ public class Main {
                 break;
             case 2:
                 System.out.println("Inserisci l'importo da prelevare");
+                withdrawAmount = scan.nextInt();
+                if (withdrawAmount >= balance) {
+                    System.out.println("Ao non li hai tutti sti soldi");
+                } else {
+                    System.out.println("Prelievo effettuato di " + withdrawAmount);
+                }
                 break;
             case 3:
-
                 System.out.println("Inserisci l'importo da depositare");
                 break;
             case 4:
