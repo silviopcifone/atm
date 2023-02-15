@@ -14,6 +14,19 @@ public class Main
         System.out.println("Premi il tasto corrispondente all'operazione che vuoi effettuare");
         byte choice = sc.nextByte();
 
-        
+        switch (choice)
+        {
+            case 1:
+                System.out.println(balanceAmount);
+            case 2:
+                System.out.println("quanto vuoi prelevare?");
+                withdrawalAmount = sc.nextInt();
+                if(withdrawalAmount>balanceAmount)
+                {
+                    
+                }
+                balanceAmount -= withdrawalAmount;
+                System.out.println(balanceAmount);
+        }
     }
 }
