@@ -32,6 +32,8 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("Inserisci la somma da depositare: ");
+                    depositAmount = sc.nextDouble();
+                    balance += depositAmount;
                     break;
                 case 4:
                     System.out.println("Il bilancio residuo è: 2");
