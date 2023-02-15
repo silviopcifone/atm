@@ -36,7 +36,8 @@ public class Main {
                     balance += depositAmount;
                     break;
                 case 4:
-                    System.out.println("Il bilancio residuo è: 2");
+                    System.out.println("Arrivederci!");
+                    operationCompleted = true;
                     break;
                 default:
                     System.out.println("ritenta!");
