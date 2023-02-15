@@ -22,6 +22,8 @@ public class Main {
                 } else {
                     System.out.println("Prelievo effettuato di " + withdrawAmount);
                 }
+                balance = balance - withdrawAmount;
+                System.out.println("Il tuo nuovo bilancio è " + balance);
                 break;
             case 3:
                 System.out.println("Inserisci l'importo da depositare");
