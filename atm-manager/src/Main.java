@@ -17,7 +17,25 @@ public class Main {
 
         choice = scanner.nextInt();
         System.out.println("Operazione scelta:"+ choice);
-        
+
+        switch(choice){
+            case 1: System.out.println("CONTROLLA BILANCIO \n Il tuo bilancio è di: "+ balance);
+                    break;
+
+            case 2: System.out.println("PRELIEVO \n Quale cifra vuoi prelevare?");
+                    withdrawAmount = scanner.nextInt();
+                    break;
+
+            case 3: System.out.println("DEPOSITO \n Quale cifra vuoi depositare?:");
+                    depositAmount = scanner.nextInt();
+                    break;
+
+            case 4: System.out.println("USCITA IN CORSO... ");
+                    break;
+
+            default:System.out.println("OPZIONE NON CONSENTITA");
+
+
 
         }
     }
