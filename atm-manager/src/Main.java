@@ -16,5 +16,26 @@ public class Main {
 
         byte operation = scanner.nextByte();
 
-    }
+        switch (operation) {
+            case 1 -> {
+                System.out.print("Enter the amount to be withdrawn :");
+                // accept the withdrawal amount from the user
+                withdrawAmount = scanner.nextInt();
+                //check whether the balance is greater than or equal to the withdrawal amount
+                System.out.println("Withdrawn Operation :");
+                System.out.println("The withdrawing Amount is : " + withdrawAmount);
+                if (balanceAmount >= withdrawAmount) {
+                    balanceAmount = balanceAmount - withdrawAmount;
+                    System.out.println("Please collect your money and remove the card");
+                    System.out.println(" The Current Balance : " + balanceAmount);
+                    System.out.println();
+                } else {
+                    System.out.println("Sorry! the balance is insufficient.");
+                    System.out.println();
+                }
+            }
+            default -> System.out.println("The chosen option is incorrect. Please select one option from the following menu:");
+
+
+        }
 }
