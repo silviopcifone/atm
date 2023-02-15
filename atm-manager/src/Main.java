@@ -17,12 +17,12 @@ public class Main
         switch (choice)
         {
             case 1:
-                System.out.println(balanceAmount);
+                System.out.printf("Il saldo corrente è : %s", balanceAmount);
                 break;
             case 2:
                 System.out.println("quanto vuoi prelevare?");
                 withdrawalAmount = sc.nextInt();
-                if(withdrawalAmount>balanceAmount)
+                if(withdrawalAmount>=balanceAmount)
                 {
                     System.out.println("non puoi prelevare più del saldo");
                     break;
