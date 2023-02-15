@@ -8,6 +8,7 @@ public class Main {
 
         System.out.println("Benvenuto in ATM");
 
+        // Exit condition
         boolean operationCompleted = false;
         while(!operationCompleted){
             System.out.println("Scegli l' operazione \n" + "1 --> Controlla bilancio\n" + "2 --> Prelievo\n" +
@@ -16,6 +17,7 @@ public class Main {
             byte userChoice = sc.nextByte();
             System.out.println("Hai scelto l' operazione: " + userChoice);
 
+            // available operations
             switch (userChoice){
                 case 1:
                     System.out.println("Il bilancio residuo è: " + balance);
@@ -25,7 +27,7 @@ public class Main {
                     withdrawAmount = sc.nextInt();
                     if(withdrawAmount!=0){
                         balance -= withdrawAmount;
-                        System.out.println(balance);
+                        System.out.println("Sul conto restano: " + balance);
                     }else {
                         System.out.println("inserisci un importo valido");
                     }
