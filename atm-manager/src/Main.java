@@ -45,6 +45,12 @@ public class Main {
                 System.out.println(" The Current Balance : " + balanceAmount);
                 System.out.println();
             }
+            case 3 -> {
+                // printing the total balance of the user
+                System.out.println(" The Current Balance : " + balanceAmount);
+                System.out.println();
+                System.out.println(" ");
+            }
             
             default -> System.out.println("The chosen option is incorrect. Please select one option from the following menu:");
 
