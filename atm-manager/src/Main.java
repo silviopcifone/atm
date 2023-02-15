@@ -33,7 +33,19 @@ public class Main {
                     System.out.println("Sorry! the balance is insufficient.");
                     System.out.println();
                 }
+            } case 2 -> {
+                System.out.print("Enter the amount to be deposited :");
+                //accept the deposit amount from the user
+                depositAmount = scanner.nextInt();
+                // call the function and add the deposit amount to the total balance
+                System.out.println("Deposit Operation :");
+                System.out.println(" The depositing amount is : " + depositAmount);
+                balanceAmount = balanceAmount + depositAmount;
+                System.out.println("Your Money has been successfully deposited");
+                System.out.println(" The Current Balance : " + balanceAmount);
+                System.out.println();
             }
+            
             default -> System.out.println("The chosen option is incorrect. Please select one option from the following menu:");
 
 
