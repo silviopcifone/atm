@@ -26,7 +26,12 @@ public class Main {
 
             case 2: System.out.println("PRELIEVO \n Quale cifra vuoi prelevare?");
                     withdrawAmount = scanner.nextInt();
-                    balance -= withdrawAmount;
+                    if(balance > withdrawAmount) {
+                        balance -= withdrawAmount;
+                    }
+                    else{
+                        System.out.println("\nBilancio non sufficiente, prelievo non consentito ");
+                    }
                     System.out.println("\nOra il tuo bilancio è di: "+ balance);
                     break;
 
