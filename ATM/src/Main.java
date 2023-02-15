@@ -15,35 +15,47 @@ public class Main {
 
         int input = scanner.nextInt();
 
-        switch (input) {
-            case 1:
-                System.out.println("Il tuo bilancio è di " + balanceAmount + " euro");
-                break;
-            case 2:
-                System.out.println("Prelievo selezionato, quanto vuoi prelevare?");
-                withdrawAmount = scanner.nextInt();
-                if (withdrawAmount > balanceAmount) {
-                    System.out.println("Errore, seleziona un importo valido");
-                } else {
-                    double differenza = balanceAmount - withdrawAmount;
+        while (input != 4) {
 
-                    System.out.println("Hai prelevato " + withdrawAmount + " euro, il tuo saldo rimanente è di " + differenza + " euro");
-                }
-                break;
-            case 3:
-                System.out.println("Deposito selezionato, quanto vuoi depositare?");
-                depositAmount = scanner.nextInt();
-                double newBalance = balanceAmount + depositAmount;
-                System.out.println("Hai depositato correttamente " + depositAmount + " euro, il tuo nuovo bilancio è di " + newBalance);
-                break;
-            case 4:
-                System.out.println("ATM in chiusura");
-                scanner.close();
-            default:
-                System.out.println("Errore");
+
+            System.out.println("Menu \n 1: controlla bilancio \n 2: prelievo \n 3: deposito \n 4: esci");
+
+            switch (input) {
+
+                case 1:
+                    System.out.println("Il tuo bilancio è di " + balanceAmount + " euro");
+                    input = scanner.nextInt();
+                    break;
+                case 2:
+                    System.out.println("Prelievo selezionato, quanto vuoi prelevare?");
+                    withdrawAmount = scanner.nextInt();
+                    if (withdrawAmount > balanceAmount) {
+                        System.out.println("Errore, seleziona un importo valido");
+                    } else {
+                        balanceAmount -= withdrawAmount;
+
+                        System.out.println("Hai prelevato " + withdrawAmount + " euro, il tuo saldo rimanente è di " + balanceAmount + " euro");
+                    }
+                    input = scanner.nextInt();
+
+                    break;
+                case 3:
+                    System.out.println("Deposito selezionato, quanto vuoi depositare?");
+                    depositAmount = scanner.nextInt();
+                    balanceAmount += depositAmount;
+                    System.out.println("Hai depositato correttamente " + depositAmount + " euro, il tuo nuovo bilancio è di " + balanceAmount);
+                    input = scanner.nextInt();
+
+                    break;
+                case 4:
+                    System.out.println("ATM in chiusura");
+
+
+                default:
+                    System.out.println("Errore");
+            }
+
+
         }
-
-
-
     }
 }
