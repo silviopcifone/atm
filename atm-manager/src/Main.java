@@ -18,6 +18,7 @@ public class Main
         {
             case 1:
                 System.out.println(balanceAmount);
+                break;
             case 2:
                 System.out.println("quanto vuoi prelevare?");
                 withdrawalAmount = sc.nextInt();
@@ -31,14 +32,19 @@ public class Main
                     balanceAmount -= withdrawalAmount;
                     System.out.println("il tuo nuovo saldo è: "+balanceAmount);
                 }
+                break;
             case 3:
                 System.out.println("quanto vuoi depositare?");
                 depositAmount = sc.nextDouble();
                 balanceAmount += depositAmount;
                 System.out.println("il tuo nuovo saldo è: "+balanceAmount);
-            case 4:
                 break;
-            default
+            case 4:
+                System.out.println("grazie per aver utilizzato l'atm");
+                break;
+            default:
+                System.out.println("Errore, hai selezionato una funzionalità inesistente");
+                break;
         }
     }
 }
