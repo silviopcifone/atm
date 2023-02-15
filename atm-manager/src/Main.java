@@ -22,9 +22,16 @@ public class Main {
                     break;
                 case 2:
                     System.out.println("quanto vuoi prelevare?: ");
+                    withdrawAmount = sc.nextInt();
+                    if(withdrawAmount!=0){
+                        balance -= withdrawAmount;
+                        System.out.println(balance);
+                    }else {
+                        System.out.println("inserisci un importo valido");
+                    }
                     break;
                 case 3:
-                    System.out.println("Il bilancio residuo è: 1");
+                    System.out.println("Inserisci la somma da depositare: ");
                     break;
                 case 4:
                     System.out.println("Il bilancio residuo è: 2");
