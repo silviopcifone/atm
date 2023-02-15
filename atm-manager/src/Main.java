@@ -10,7 +10,7 @@ public class Main
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Benvenuto nell'atm");
-        System.out.println("cosa vuoi fare? \n 1) Saldo contabile \n 2) Deposito \n 3) Prelievo \n 4) Esci");
+        System.out.println("cosa vuoi fare? \n 1) Saldo contabile \n 2) Prelievo \n 3) Deposito \n 4) Esci");
         System.out.println("Premi il tasto corrispondente all'operazione che vuoi effettuare");
         byte choice = sc.nextByte();
 
@@ -23,10 +23,22 @@ public class Main
                 withdrawalAmount = sc.nextInt();
                 if(withdrawalAmount>balanceAmount)
                 {
-                    
+                    System.out.println("non puoi prelevare più del saldo");
+                    break;
                 }
-                balanceAmount -= withdrawalAmount;
-                System.out.println(balanceAmount);
+                else
+                {
+                    balanceAmount -= withdrawalAmount;
+                    System.out.println("il tuo nuovo saldo è: "+balanceAmount);
+                }
+            case 3:
+                System.out.println("quanto vuoi depositare?");
+                depositAmount = sc.nextDouble();
+                balanceAmount += depositAmount;
+                System.out.println("il tuo nuovo saldo è: "+balanceAmount);
+            case 4:
+                break;
+            default
         }
     }
 }
