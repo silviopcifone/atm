@@ -51,7 +51,9 @@ public class Main {
                 System.out.println();
                 System.out.println(" ");
             }
-            
+            case 4 ->
+                // exit from the menu
+                    System.exit(0);
             default -> System.out.println("The chosen option is incorrect. Please select one option from the following menu:");
 
 
