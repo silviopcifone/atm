@@ -21,20 +21,20 @@ public class Main {
                 break;
             case 2:
                 System.out.println("Prelievo selezionato, quanto vuoi prelevare?");
-                int prelievo = scanner.nextInt();
-                if (prelievo > balanceAmount) {
+                withdrawAmount = scanner.nextInt();
+                if (withdrawAmount > balanceAmount) {
                     System.out.println("Errore, seleziona un importo valido");
                 } else {
-                    double differenza = balanceAmount - prelievo;
+                    double differenza = balanceAmount - withdrawAmount;
 
-                    System.out.println("Hai prelevato " + prelievo + " euro, il tuo saldo rimanente è di " + differenza + " euro");
+                    System.out.println("Hai prelevato " + withdrawAmount + " euro, il tuo saldo rimanente è di " + differenza + " euro");
                 }
                 break;
             case 3:
                 System.out.println("Deposito selezionato, quanto vuoi depositare?");
-                int deposito = scanner.nextInt();
-                double newBalance = balanceAmount + deposito;
-                System.out.println("Hai depositato correttamente " + deposito + " euro, il tuo nuovo bilancio è di " + newBalance);
+                depositAmount = scanner.nextInt();
+                double newBalance = balanceAmount + depositAmount;
+                System.out.println("Hai depositato correttamente " + depositAmount + " euro, il tuo nuovo bilancio è di " + newBalance);
                 break;
             case 4:
                 System.out.println("ATM in chiusura");
