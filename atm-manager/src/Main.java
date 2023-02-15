@@ -33,7 +33,7 @@ public class Main {
             case 4: System.out.println("USCITA IN CORSO... ");
                     break;
 
-            default:System.out.println("OPZIONE NON CONSENTITA");
+            default:System.out.println("OPERAZIONE NON CONSENTITA");
 
 
 
