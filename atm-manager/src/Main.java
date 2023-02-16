@@ -1,9 +1,12 @@
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
-        double balance = 10000, depositAmount = 0;
+        double balance = 10000;
+        int depositAmount = 0;
         int withdrawAmount = 0;
+
         Scanner scan = new Scanner(System.in);
         System.out.println("Benvenuto nell'(fr)ATM");
 
