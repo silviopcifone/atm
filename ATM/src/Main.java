@@ -1,3 +1,5 @@
+import ATM.Atm;
+
 import java.util.Scanner;
 
 public class Main {
@@ -10,7 +12,7 @@ public class Main {
         System.out.println("Benvenuto");
         System.out.println("Menu \n 1: controlla bilancio \n 2: prelievo \n 3: deposito \n 4: esci");
 
-
+        Atm atm = new Atm(10000, 0, 0);
         Scanner scanner = new Scanner(System.in);
 
         int input = scanner.nextInt();
@@ -48,7 +50,7 @@ public class Main {
 
                     break;
                 case 4:
-                    System.out.println("ATM in chiusura");
+                    System.out.println("ATM.ATM in chiusura");
 
 
                 default:
