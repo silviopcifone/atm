@@ -1,39 +1,30 @@
 package atm;
 
 public class Atm {
-    double balance = 0;
-    int withdrawAmount = 0;
-    double depositAmount = 0;
+    private Account userAccount;
 
-    public Atm(){
+
+    public void printWelcome(){
+
+    }
+    public void printMenu(){
 
     }
 
-    public Atm(double balance) {
-        this.balance = balance;
+    public void printBalance(){
+
     }
 
-    public double getBalance() {
-        return balance;
+    public void withdraw(int amount) {
+
     }
 
-    public void setBalance(double balance) {
-        this.balance = balance;
+    public void deposit(int amount) {
+
     }
 
-    public int getWithdrawAmount() {
-        return withdrawAmount;
+    public void closeApp() {
+
     }
 
-    public void setWithdrawAmount(int withdrawAmount) {
-        this.withdrawAmount = withdrawAmount;
-    }
-
-    public double getDepositAmount() {
-        return depositAmount;
-    }
-
-    public void setDepositAmount(double depositAmount) {
-        this.depositAmount = depositAmount;
-    }
 }
