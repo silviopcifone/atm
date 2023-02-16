@@ -1,15 +1,19 @@
+package atm;
+
 import java.util.Scanner;
 
 import static java.lang.System.exit;
 
 public class Main {
     public static void main(String[] args) {
-        double balance = 10000;
+        double balance = 0;
         int withdrawAmount = 0;
         double depositAmount = 0;
+
+        Atm atm1 = new Atm();
         int choice = 0;
 
-        System.out.println("\n\nBENVENUTO!");
+        System.out.println("\n\nWELCOME!");
 
         while (true) {
             Scanner scanner = new Scanner(System.in);
