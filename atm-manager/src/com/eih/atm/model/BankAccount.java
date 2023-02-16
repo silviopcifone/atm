@@ -1,13 +1,19 @@
 package com.eih.atm.model;
 
 public class BankAccount {
-    private double balanceAmount = 1000;
+    private final int ID;
+    private double balanceAmount;
+    private BankAccountOwner owner;
+
+    public BankAccount() {
+        ID = 1;
+    }
 
     public double getBalanceAmount() {
         return balanceAmount;
     }
 
     public void setBalanceAmount(double balanceAmount) {
-        this.balanceAmount = balanceAmount;
+        this.balanceAmount += balanceAmount;
     }
 }
