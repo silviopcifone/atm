@@ -1,4 +1,4 @@
-import ATM.Atm;
+import org.elis.atm.Atm;
 
 import java.util.Scanner;
 

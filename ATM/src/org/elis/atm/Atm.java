@@ -1,4 +1,4 @@
-package ATM;
+package org.elis.atm;
 
 public class Atm {
 
