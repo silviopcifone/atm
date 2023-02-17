@@ -1,3 +1,5 @@
+package org.atm.model;
+
 public class Account {
 
     private final int ID;
