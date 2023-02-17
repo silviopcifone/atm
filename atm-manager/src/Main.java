@@ -1,3 +1,4 @@
+import org.eih.atm.model.BankAccount;
 import org.eih.atm.service.Atm;
 
 import java.util.Scanner;
@@ -8,6 +9,7 @@ public class Main
     {
 
         Atm atm = new Atm();
+        BankAccount ba = new BankAccount(1);
 
         while(true)
         {
@@ -17,13 +19,13 @@ public class Main
             switch (choice)
             {
                 case 1:
-                    atm.printBalance();
+                    atm.printBalance(ba);
                     break;
                 case 2:
-                    atm.withdraw();
+                    atm.withdraw(ba);
                     break;
                 case 3:
-                    atm.deposit();
+                    atm.deposit(ba);
                     break;
                 case 4:
                     atm.closeApp();

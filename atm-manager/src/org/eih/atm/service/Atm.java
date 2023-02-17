@@ -23,12 +23,12 @@ public class Atm
         return choice;
     }
 
-    public void printBalance()
+    public void printBalance(BankAccount userAccount)
     {
         System.out.printf("Il saldo corrente è : %s", userAccount.getBalanceAmount());
     }
 
-    public void withdraw()
+    public void withdraw(BankAccount userAccount)
     {
         System.out.println("quanto vuoi prelevare?");
         int amount = getAmount();
@@ -43,7 +43,7 @@ public class Atm
         }
     }
 
-    public void deposit()
+    public void deposit(BankAccount userAccount)
     {
         System.out.println("quanto vuoi depositare?");
         int amount = getAmount();
