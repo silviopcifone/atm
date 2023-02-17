@@ -3,7 +3,7 @@ package org.eih.atm.model;
 public class BankAccount
 {
     private String ID;
-    private double balanceAmount;
+    private int balanceAmount;
 
     private AccountOwner owner;
 
@@ -20,12 +20,12 @@ public class BankAccount
     }
 
 
-    public double getBalanceAmount()
+    public int getBalanceAmount()
     {
         return balanceAmount;
     }
 
-    public void setBalanceAmount(double balanceAmount)
+    public void setBalanceAmount(int balanceAmount)
     {
         this.balanceAmount = balanceAmount;
     }

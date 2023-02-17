@@ -14,7 +14,7 @@ public class TestBankAccount {
         int initialBalance = 5000;
         BankAccount bankAccount = new BankAccount(initialBalance,owner);
         int expectedBalance = initialBalance;
-        assertEquals(expectedBalance, initialBalance);
+        assertEquals(expectedBalance, bankAccount.getBalanceAmount());
     }
 
     @Test
@@ -25,17 +25,29 @@ public class TestBankAccount {
         int initialBalance = 100;
         BankAccount bankAccount = new BankAccount(owner);
         int expectedBalance = initialBalance;
-        assertEquals(initialBalance,expectedBalance);
+        assertEquals(expectedBalance, bankAccount.getBalanceAmount());
     }
 
     @Test
-    public void testIDBankAccount(){
+    public void testIDBankAccountNoBalance(){
         String name = "Emanuele";
         String surname = "Valentini";
         AccountOwner owner = new AccountOwner(name,surname);
         BankAccount bankAccount = new BankAccount(owner);
         String ID = bankAccount.getID();
-        String expectedID = "100.0Emanuele";
+        String expectedID = "100Emanuele";
+        assertEquals(expectedID,ID);
+    }
+
+    @Test
+    public void testIDBankAccountBalance(){
+        String name = "Emanuele";
+        String surname = "Valentini";
+        int initialBalance = 5000;
+        AccountOwner owner = new AccountOwner(name,surname);
+        BankAccount bankAccount = new BankAccount(initialBalance,owner);
+        String ID = bankAccount.getID();
+        String expectedID = "5000Emanuele";
         assertEquals(expectedID,ID);
     }
 
