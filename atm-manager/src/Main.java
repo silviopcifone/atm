@@ -1,45 +1,32 @@
+import sdk.model.BankAccount;
+import service.Atm;
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        double balance = 10000;
-        double depositAmount = 0;
-        int withdrawAmount = 0;
-        
-        System.out.println("Benvenuto in ATM");
 
+        Atm atm = new Atm();
+        BankAccount ba = new BankAccount(1);
         // Exit condition
         boolean operationCompleted = false;
         while(!operationCompleted){
-            System.out.println("Scegli l' operazione \n"
-                            + "1 --> Controlla bilancio\n" 
-                            + "2 --> Prelievo\n"
-                            + "3 --> Deposita\n"
-                            + "4 --> Esci\n");
-            Scanner sc = new Scanner(System.in);
-            byte userChoice = sc.nextByte();
+            atm.printWelcome();
+            byte userChoice = atm.menu();
+
             System.out.println("Hai scelto l' operazione: " + userChoice);
 
             // available operations
             switch (userChoice){
                 case 1:
-                    System.out.println("Il bilancio residuo è: " + balance);
+                    atm.printBalance(ba);
                     break;
                 case 2:
-                    System.out.println("quanto vuoi prelevare?: ");
-                    withdrawAmount = sc.nextInt();
-                    if(withdrawAmount!=0){
-                        balance -= withdrawAmount;
-                        System.out.println("Sul conto restano: " + balance);
-                    }else {
-                        System.out.println("inserisci un importo valido");
-                    }
+                   atm.withdraw(ba);
                     break;
                 case 3:
-                    System.out.println("Inserisci la somma da depositare: ");
-                    depositAmount = sc.nextDouble();
-                    balance += depositAmount;
+                    atm.deposit(ba);
                     break;
                 case 4:
                     System.out.println("Arrivederci!");
