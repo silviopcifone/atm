@@ -1,7 +1,8 @@
 package org.eih.atm.model;
 
 public class User {
-    private int ID;
+    private int age;
+    private String ID;
     private String name;
     private String surname;
     private String username;
@@ -12,9 +13,15 @@ public class User {
         this.username = name + surname;
     }
 
+    public User(String name, String surname, int age) {
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+    }
 
-    public int generate(){
-        return 1;
+    public String generateID(){
+
+        return this.getAge()*2+""+this.getSurname();
     }
 
     public String getName() {
@@ -41,11 +48,19 @@ public class User {
         this.username = username;
     }
 
-    public int getID() {
+    public String getID() {
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(String ID) {
         this.ID = ID;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }

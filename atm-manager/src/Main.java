@@ -1,3 +1,4 @@
+import org.eih.atm.model.AccountOwner;
 import org.eih.atm.model.BankAccount;
 import org.eih.atm.service.Atm;
 
@@ -9,7 +10,8 @@ public class Main
     {
 
         Atm atm = new Atm();
-        BankAccount ba = new BankAccount(10000);
+        AccountOwner owner = new AccountOwner("Emanuele","Valentini");
+        BankAccount ba = new BankAccount(10000,owner);
 
         while(true)
         {

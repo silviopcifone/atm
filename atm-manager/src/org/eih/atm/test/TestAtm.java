@@ -1,11 +1,8 @@
 package org.eih.atm.test;
 
 import org.junit.Test;
-
+import static org.junit.Assert.assertEquals;
 public class TestAtm {
 
-    @Test
-    public void testPrintBalance(){
 
-    }
 }
