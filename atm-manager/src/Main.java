@@ -12,10 +12,9 @@ public class Main
         Atm atm = new Atm();
         AccountOwner owner = new AccountOwner("Emanuele","Valentini");
         BankAccount ba = new BankAccount(10000,owner);
-
+        atm.printWelcome();
         while(true)
         {
-            atm.printWelcome();
             byte choice = atm.printMenu();
 
             switch (choice)

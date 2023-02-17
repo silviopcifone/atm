@@ -11,7 +11,7 @@ public class TestAccountOwner {
         String surname = "Valentini";
         int age = 25;
         AccountOwner accountOwner = new AccountOwner(name,surname,age);
-        String expectedUsername = name+surname+age;
+        String expectedUsername = name + surname + age;
         assertEquals(expectedUsername,accountOwner.getUsername());
     }
 

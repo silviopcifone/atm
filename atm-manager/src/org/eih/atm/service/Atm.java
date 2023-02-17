@@ -26,6 +26,7 @@ public class Atm
     public void printBalance(BankAccount userAccount)
     {
         System.out.printf("Il saldo corrente è : %s", userAccount.getBalanceAmount());
+        System.out.println();
     }
 
     public void withdraw(BankAccount userAccount)
