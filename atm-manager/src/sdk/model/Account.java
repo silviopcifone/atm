@@ -2,14 +2,20 @@ package sdk.model;
 
 public class Account extends User {
 
-    private final int ID;
-    private int balance = 10000;
+    private  int ID;
+    private int balance;
 
     private AccountOwner owner;
 
     public Account(String name, String surname) {
         super(name, surname);
         ID = 1;
+    }
+
+    public Account(int initialBalance) {
+
+        this.balance = initialBalance;
+
     }
 
     @Override

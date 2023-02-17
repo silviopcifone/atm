@@ -2,7 +2,7 @@ package sdk.model;
 
 public class User {
 
-    private final int ID;
+    private  int ID;
     private String name;
     private String surname;
     private String username;
@@ -14,7 +14,11 @@ public class User {
         this.ID = generate();
     }
 
-     int generate() {
+    public User() {
+
+    }
+
+    int generate() {
         return 1;
     }
 
