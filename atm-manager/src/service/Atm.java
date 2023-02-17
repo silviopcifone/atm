@@ -1,3 +1,7 @@
+package service;
+
+import sdk.model.Account;
+
 public class Atm {
     /**
      *
