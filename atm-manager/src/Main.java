@@ -9,7 +9,7 @@ public class Main
     {
 
         Atm atm = new Atm();
-        BankAccount ba = new BankAccount(1);
+        BankAccount ba = new BankAccount(10000);
 
         while(true)
         {

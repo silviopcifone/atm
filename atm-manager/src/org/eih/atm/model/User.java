@@ -6,12 +6,12 @@ public class User {
     private String surname;
     private String username;
 
-    public User(String name, String surname){
+    public User(String name, String surname) {
         this.name = name;
         this.surname = surname;
         this.username = name + surname;
-        this.ID = generate();
     }
+
 
     public int generate(){
         return 1;

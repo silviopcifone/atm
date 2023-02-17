@@ -2,14 +2,14 @@ package org.eih.atm.model;
 
 public class BankAccount
 {
-    private final int ID;
-    private double balanceAmount = 10000;
+    private int ID;
+    private double balanceAmount;
     private AccountOwner owner;
 
-    public BankAccount(int id)
-    {
-        ID = id;
+    public BankAccount(int initialBalance) {
+        this.balanceAmount=initialBalance;
     }
+
 
     public double getBalanceAmount()
     {
