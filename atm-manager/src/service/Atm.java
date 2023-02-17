@@ -3,9 +3,7 @@ package service;
 import sdk.model.Account;
 
 public class Atm {
-    /**
-     *
-     */
+
     private Account userAccount;
 
     public void printWelcome() {
@@ -16,7 +14,7 @@ public class Atm {
 
     }
 
-    public void printBalance() {
+    public void printBalance(int amount) {
 
     }
 

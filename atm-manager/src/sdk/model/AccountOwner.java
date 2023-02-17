@@ -1,14 +1,6 @@
 package sdk.model;
 
-public class AccountOwner extends User {
+public class AccountOwner{
 
-    public AccountOwner(String name, String surname) {
-        super(name, surname);
-    }
 
-    @Override
-    public int generate() {
-        int x = super.generate();
-        return x + 1;
-    }
 }

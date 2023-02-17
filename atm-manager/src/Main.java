@@ -8,7 +8,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to ATM ... ");
 
-        while(true) {
+        while (true) {
             System.out.println("Select 1 for Check Balance");
             System.out.println("Select 2 for Withdraw");
             System.out.println("Select 3 for Deposit");
@@ -61,4 +61,8 @@ public class Main {
             }
         }
     }
+
+    //public static void main(String[] args) {
+
+    //}
 }
