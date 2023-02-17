@@ -50,12 +50,4 @@ public class TestBankAccount {
         String expectedID = "5000Emanuele";
         assertEquals(expectedID,ID);
     }
-
-    /*
-    Conto corrente:
-- Inizializzato con Bilancio iniziale.
-- Se non ho bilancio iniziale, voglio che venga impostato balance = 100
-- ID = bilancioIniziale + Nome del proprietario
-
-     */
 }

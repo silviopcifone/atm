@@ -33,14 +33,4 @@ public class TestAccountOwner {
         String expectedID = age*2+surname;
         assertEquals(expectedID,accountOwner.getID());
     }
-
-
-
-    /*
-    Proprietario del conto corrente:
-- Inizializzato con nome, cognome e età
-- Il suo username deve essere generato automaticamente come username = nome+cognome+età
-- Se l'età non è presente, utilizziamo solo nome+cognome
-- ID utente generato come id = età*2 + cognome
-     */
 }
