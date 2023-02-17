@@ -1,11 +1,9 @@
 package sdk.model;
 
-import sdk.model.AccountOwner;
-
 public class Account extends User {
 
     private final int ID;
-    private int balance;
+    private int balance = 10000;
 
     private AccountOwner owner;
 
@@ -14,14 +12,18 @@ public class Account extends User {
         ID = 1;
     }
 
+    @Override
+    public int getID() {
+        return ID;
+    }
+
     public int getBalance() {
         return balance;
     }
 
     public void setBalance(int balance) {
-        this.balance += balance;
+        this.balance = balance;
     }
-
 
 
 }
