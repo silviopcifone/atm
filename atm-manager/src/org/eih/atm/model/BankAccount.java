@@ -18,6 +18,6 @@ public class BankAccount
 
     public void setBalanceAmount(double balanceAmount)
     {
-        this.balanceAmount += balanceAmount;
+        this.balanceAmount = balanceAmount;
     }
 }
