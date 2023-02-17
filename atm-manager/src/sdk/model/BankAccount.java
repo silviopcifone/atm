@@ -1,22 +1,38 @@
 package sdk.model;
 
 public class BankAccount {
-    private final int ID;
+    private String ID;
 
-    private double balanceAmount;
+    private int balanceAmount;
 
     private AccountOwner owner;
 
-    public BankAccount(int ID) {
-        this.ID = ID;
+    public BankAccount(int balanceAmount) {
+        this.balanceAmount = balanceAmount;
+    }
+    public BankAccount() {
+        this.balanceAmount = 100;
+    }
+    public BankAccount(int balanceAmount, AccountOwner owner) {
+        setBalanceAmount(balanceAmount);
+        this.ID = balanceAmount + owner.getName();
     }
 
-    public double getBalanceAmount() {
+    public String getID() {
+        return ID;
+    }
+
+    public int getBalanceAmount() {
         return balanceAmount;
     }
 
-    public void setBalanceAmount(double balanceAmount)
+    public void setBalanceAmount(int balanceAmount)
     {
-        this.balanceAmount = balanceAmount;
+        if(balanceAmount == 0){
+            this.balanceAmount = 100;
+
+        }else{
+            this.balanceAmount = balanceAmount;
+        }
     }
 }
