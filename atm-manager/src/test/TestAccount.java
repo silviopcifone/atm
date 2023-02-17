@@ -25,7 +25,7 @@ public class TestAccount {
 
         AccountOwner owner = new AccountOwner("Raffaele","Papaleo");
         String id = initialBalance + owner.getName();
-                Account account = new Account(id, initialBalance, owner);
+                Account account = new Account(initialBalance, owner);
 
 
         assertEquals(id, account.getID());

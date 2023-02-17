@@ -4,7 +4,6 @@ public class Account extends User {
 
     private  String ID;
     private int balance;
-
     private AccountOwner owner;
 
     public Account(String name, String surname) {
@@ -27,12 +26,9 @@ public class Account extends User {
     public Account(int initialBalance, AccountOwner owner) {
         this.balance = initialBalance;
         this.owner = owner;
+        this.ID = initialBalance + owner.getName();
 
-    }
-    public Account(String ID, int balance, AccountOwner owner) {
-        this.ID = ID;
-        this.balance = balance;
-        this.owner = owner;
+
     }
 
     @Override
