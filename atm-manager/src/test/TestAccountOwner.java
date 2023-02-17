@@ -9,6 +9,18 @@ import static org.junit.Assert.assertEquals;
 
 public class TestAccountOwner {
 
+    @Test
+    public void testAccountOwnerCreation() {
+        String name = "Raffaele";
+        String surname = "Papaleo";
+        int età = 22;
+
+        AccountOwner owner = new AccountOwner(name, surname, età);
+        assertEquals(name, owner.getName());
+        assertEquals(surname, owner.getSurname());
+        assertEquals(età, owner.getEtà());
+    }
+
 
     @Test
     public void testAccountOwnerUsername() {
