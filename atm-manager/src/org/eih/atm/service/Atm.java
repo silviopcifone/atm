@@ -1,8 +1,16 @@
-package org.eih.atm.model;
+package org.eih.atm.service;
+
+import org.eih.atm.model.BankAccount;
 
 public class Atm
 {
     private BankAccount userAccount;
+
+
+    public void printWelcome()
+    {
+
+    }
 
     public void printMenu()
     {
