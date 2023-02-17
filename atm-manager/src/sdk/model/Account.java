@@ -2,14 +2,14 @@ package sdk.model;
 
 public class Account extends User {
 
-    private  int ID;
+    private  String ID;
     private int balance;
 
     private AccountOwner owner;
 
     public Account(String name, String surname) {
         super(name, surname);
-        ID = 1;
+
     }
 
     public Account(int initialBalance) {
@@ -18,8 +18,25 @@ public class Account extends User {
 
     }
 
+    public Account(AccountOwner owner) {
+        this.balance = 100;
+        this.owner = owner;
+
+    }
+
+    public Account(int initialBalance, AccountOwner owner) {
+        this.balance = initialBalance;
+        this.owner = owner;
+
+    }
+    public Account(String ID, int balance, AccountOwner owner) {
+        this.ID = ID;
+        this.balance = balance;
+        this.owner = owner;
+    }
+
     @Override
-    public int getID() {
+    public String getID() {
         return ID;
     }
 
