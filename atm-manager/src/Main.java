@@ -15,27 +15,7 @@ public class Main
 
         while(true)
         {
-            atm.printWelcome();
-            byte choice = atm.printMenu();
-
-            switch (choice)
-            {
-                case 1:
-                    atm.printBalance(ba);
-                    break;
-                case 2:
-                    atm.withdraw(ba);
-                    break;
-                case 3:
-                    atm.deposit(ba);
-                    break;
-                case 4:
-                    atm.closeApp();
-                    System.exit(0);
-                default:
-                    atm.error();
-                    break;
-            }
+            atm.menuAtm(atm,ba);
         }
     }
 }

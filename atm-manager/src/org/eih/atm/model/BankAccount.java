@@ -37,4 +37,12 @@ public class BankAccount
     public void setID(String ID) {
         this.ID = ID;
     }
+
+    public AccountOwner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(AccountOwner owner) {
+        this.owner = owner;
+    }
 }
