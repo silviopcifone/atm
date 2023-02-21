@@ -15,9 +15,7 @@ public class Main
         atm.printWelcome();
         while(true)
         {
-<<<<<<< HEAD
             atm.menuAtm(atm,ba);
-=======
             byte choice = atm.printMenu();
 
             switch (choice)
@@ -38,7 +36,6 @@ public class Main
                     atm.error();
                     break;
             }
->>>>>>> cafb442deb38760b0d724a12d87fbee7822f2ddd
         }
     }
 }
