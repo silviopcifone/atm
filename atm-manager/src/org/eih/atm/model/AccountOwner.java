@@ -2,21 +2,20 @@ package org.eih.atm.model;
 
 import java.util.Random;
 
-public class AccountOwner extends User
-{
+public class AccountOwner extends User {
     private String username;
     private String ID;
 
     private int pin;
 
-    public AccountOwner(String name, String surname){
+    public AccountOwner(String name, String surname) {
         super(name, surname);
         this.username = name + surname;
         this.ID = 0 + surname;
     }
 
     public AccountOwner(String name, String surname, int age) {
-        super(name,surname,age);
+        super(name, surname, age);
         this.username = name + surname + age;
         this.ID = age * 2 + surname;
     }
@@ -45,4 +44,17 @@ public class AccountOwner extends User
         return pin;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        } else if (obj.getClass() != this.getClass()) {
+            return false;
+        }
+        AccountOwner owner = (AccountOwner) obj;
+        return  owner.getName() == this.getName() &&
+                owner.getSurname() == this.getSurname() &&
+                owner.getID() == this.getID() &&
+                owner.username == this.getUsername();
+    }
 }

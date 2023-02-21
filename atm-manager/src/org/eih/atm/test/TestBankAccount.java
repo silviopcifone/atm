@@ -23,7 +23,7 @@ public class TestBankAccount extends TestCase {
         int initialBalance = 5000;
         BankAccount bankAccount = new BankAccount(initialBalance,owner);
         int expectedBalance = initialBalance;
-        assertEquals(expectedBalance, bankAccount.getBalanceAmount());
+        assertEquals(this.ao,bankAccount.getOwner());
     }
 
     @Test
@@ -61,8 +61,7 @@ public class TestBankAccount extends TestCase {
     }
 
     @Test
-    public void testPinGeneration() throws Exception {
-        setUp();
+    public void testPinGeneration(){
         boolean expectedResult = true;
         int pin = ba.generatePin();
         boolean actualResult = pin >= 1000 && pin <= 9999;
