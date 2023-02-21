@@ -12,10 +12,33 @@ public class Main
         Atm atm = new Atm();
         AccountOwner owner = new AccountOwner("Emanuele","Valentini");
         BankAccount ba = new BankAccount(10000,owner);
-
+        atm.printWelcome();
         while(true)
         {
+<<<<<<< HEAD
             atm.menuAtm(atm,ba);
+=======
+            byte choice = atm.printMenu();
+
+            switch (choice)
+            {
+                case 1:
+                    atm.printBalance(ba);
+                    break;
+                case 2:
+                    atm.withdraw(ba);
+                    break;
+                case 3:
+                    atm.deposit(ba);
+                    break;
+                case 4:
+                    atm.closeApp();
+                    System.exit(0);
+                default:
+                    atm.error();
+                    break;
+            }
+>>>>>>> cafb442deb38760b0d724a12d87fbee7822f2ddd
         }
     }
 }
