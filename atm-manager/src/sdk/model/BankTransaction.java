@@ -1,4 +1,4 @@
-package org.elis.atm;
+package sdk.model;
 
 public class BankTransaction {
 }
