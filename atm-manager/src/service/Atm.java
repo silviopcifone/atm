@@ -10,6 +10,12 @@ public class Atm {
     int withdrawAmount;
     int depositAmount;
     Scanner scanner = new Scanner(System.in);
+    String username = "RaffaelePapaleo24";
+    short pin = 1234;
+
+    public Atm() {
+
+    }
 
     public Atm(Account userAccount) {
 
@@ -75,4 +81,10 @@ public class Atm {
     public void closeApp() {
     System.exit(0);
     }
+
+    public boolean authenticate(String username, short pin) {
+        return this.username.equals(username) && this.pin == pin;
+
+    }
+
 }

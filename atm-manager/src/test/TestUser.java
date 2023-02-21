@@ -15,4 +15,8 @@ public class TestUser {
         String expectedUsername = name + surname;
         assertEquals(expectedUsername, user.getUsername());
     }
+
+
+
+
 }
