@@ -1,22 +1,27 @@
 package org.eih.atm.model;
 
+import java.util.Random;
+
 public class BankAccount
 {
     private String ID;
     private int balanceAmount;
 
     private AccountOwner owner;
+    private int pin;
 
     public BankAccount(int initialBalance, AccountOwner owner) {
         this.balanceAmount = initialBalance;
         this.owner = owner;
         this.ID = initialBalance + "" + owner.getName();
+        this.pin = generatePin();
     }
 
     public BankAccount(AccountOwner owner) {
         this.balanceAmount = 100;
         this.owner = owner;
         this.ID = this.balanceAmount + "" + owner.getName();
+        this.pin = generatePin();
     }
 
 
@@ -44,5 +49,13 @@ public class BankAccount
 
     public void setOwner(AccountOwner owner) {
         this.owner = owner;
+    }
+
+    public int getPin() {
+        return pin;
+    }
+
+    public int generatePin() {
+        return new Random().nextInt(8999) + 1000;
     }
 }

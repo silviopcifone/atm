@@ -10,6 +10,8 @@ public class Atm
     Scanner sc = new Scanner(System.in);
 
 
+
+
     public void printWelcome()
     {
         System.out.println("Benvenuto nell'atm");
@@ -90,6 +92,6 @@ public class Atm
     }
 
     public boolean authenticate(String username, int pin) {
-        return username == userAccount.getOwner().getUsername() && pin == userAccount.getOwner().getPin();
+        return username == userAccount.getOwner().getUsername() && pin == userAccount.getPin();
     }
 }

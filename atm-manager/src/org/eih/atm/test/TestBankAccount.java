@@ -1,11 +1,20 @@
 package org.eih.atm.test;
 
+import junit.framework.TestCase;
 import org.eih.atm.model.AccountOwner;
 import org.eih.atm.model.BankAccount;
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
-public class TestBankAccount {
-
+public class TestBankAccount extends TestCase {
+    BankAccount ba;
+    AccountOwner ao;
+    @Override
+    protected void setUp() throws Exception{
+        super.setUp();
+        ao = new AccountOwner("Emanuele","Valentini",25);
+        ba = new BankAccount(10000, ao);
+    }
     @Test
     public void testCreateBankAccount(){
         String name = "Emanuele";
@@ -49,5 +58,14 @@ public class TestBankAccount {
         String ID = bankAccount.getID();
         String expectedID = "5000Emanuele";
         assertEquals(expectedID,ID);
+    }
+
+    @Test
+    public void testPinGeneration() throws Exception {
+        setUp();
+        boolean expectedResult = true;
+        int pin = ba.generatePin();
+        boolean actualResult = pin >= 1000 && pin <= 9999;
+        assertEquals(expectedResult,actualResult);
     }
 }

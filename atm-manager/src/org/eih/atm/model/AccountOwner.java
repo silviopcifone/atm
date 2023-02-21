@@ -7,20 +7,18 @@ public class AccountOwner extends User
     private String username;
     private String ID;
 
-    private short pin;
+    private int pin;
 
     public AccountOwner(String name, String surname){
         super(name, surname);
         this.username = name + surname;
-        this.ID = 0+surname;
-        this.pin = 1234;
+        this.ID = 0 + surname;
     }
 
     public AccountOwner(String name, String surname, int age) {
         super(name,surname,age);
         this.username = name + surname + age;
         this.ID = age * 2 + surname;
-        this.pin = 1234;
     }
 
     @Override
@@ -43,7 +41,7 @@ public class AccountOwner extends User
         this.ID = ID;
     }
 
-    public short getPin() {
+    public int getPin() {
         return pin;
     }
 
