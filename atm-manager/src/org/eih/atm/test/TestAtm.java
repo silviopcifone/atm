@@ -40,7 +40,36 @@ public class TestAtm extends TestCase {
     }
 
     @Test
-    public void testFunctions(){
-        
+    public void testCheckBalance(){
+        int actualBalance = atm.getBalance();
+        int expectedBalance = 10000;
+        assertEquals(expectedBalance,actualBalance);
+    }
+
+    @Test
+    public void testDeposit(){
+        atm.setDeposit(1000);
+        int expectedBalance = 11000;
+        assertEquals(expectedBalance,atm.getBalance());
+    }
+
+    @Test
+    public void testWithdraw(){
+        atm.setWithdraw(1000);
+        int expectedBalance = 9000;
+        assertEquals(expectedBalance,atm.getBalance());
+    }
+
+    @Test
+    public void testMenu(){
+        String expectedMenu = "cosa vuoi fare? \n 1) Saldo contabile \n 2) Prelievo \n 3) Deposito \n 4) Esci " +
+                "\n Premi il tasto corrispondente all'operazione che vuoi effettuare";
+        assertEquals(expectedMenu,atm.generateMenu());
+    }
+
+    @Test
+    public void testWelcome(){
+        String expectedWelcome = "Benvenuto nell'atm";
+        assertEquals(expectedWelcome,atm.getWelcome());
     }
 }
