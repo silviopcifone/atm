@@ -1,11 +1,14 @@
 package org.eih.atm.test;
 
 import junit.framework.TestCase;
+import org.eih.atm.exception.AtmOperationException;
 import org.eih.atm.model.AccountOwner;
 import org.eih.atm.model.BankAccount;
 import org.eih.atm.service.Atm;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
+
 public class TestAtm extends TestCase {
     /*
     Atm:
@@ -48,17 +51,26 @@ public class TestAtm extends TestCase {
 
     @Test
     public void testDeposit(){
-        atm.setDeposit(1000);
+        atm.deposit(1000);
         int expectedBalance = 11000;
         assertEquals(expectedBalance,atm.getBalance());
     }
 
     @Test
-    public void testWithdraw(){
-        atm.setWithdraw(1000);
+    public void testWithdraw() throws AtmOperationException {
+        atm.withdraw(1000);
         int expectedBalance = 9000;
         assertEquals(expectedBalance,atm.getBalance());
     }
+
+//    @Test
+//    public void testWithdrawalError() throws AtmOperationException {
+//        try{
+//            assertThrows(AtmOperationException, atm.withdraw(11000));
+//        }catch (Exception e){
+//            throw new RuntimeException(e);
+//        }
+//    }
 
     @Test
     public void testMenu(){

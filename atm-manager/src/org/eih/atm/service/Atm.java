@@ -1,5 +1,6 @@
 package org.eih.atm.service;
 
+import org.eih.atm.exception.AtmOperationException;
 import org.eih.atm.model.BankAccount;
 
 import java.util.ArrayList;
@@ -35,12 +36,16 @@ public class Atm
         return bankAccountList.get(0).getBalanceAmount();
     }
 
-    public void setDeposit(int deposit) {
+    public void deposit(int deposit) {
         bankAccountList.get(0).setBalanceAmount(getBalance()+deposit);
     }
 
-    public void setWithdraw(int withdraw) {
-        bankAccountList.get(0).setBalanceAmount(getBalance()-withdraw);
+    public void withdraw(int withdraw) throws AtmOperationException {
+        if(withdraw > getBalance()){
+            throw new AtmOperationException("Il valore del prelievo è troppo alto");
+        }else{
+            bankAccountList.get(0).setBalanceAmount(getBalance()-withdraw);
+        }
     }
 
     public String generateMenu() {
