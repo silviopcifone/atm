@@ -48,4 +48,11 @@ public class Atm {
     public void closeApp() {
         System.exit(0);
     }
+
+    private String username = "silviopablo174";
+    private short pin = 1234;
+
+    public boolean authenticate(String userName, short pin) {
+        return this.username.equals(userName) && this.pin == pin;
+    }
 }
