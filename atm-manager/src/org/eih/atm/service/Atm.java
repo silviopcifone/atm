@@ -2,14 +2,18 @@ package org.eih.atm.service;
 
 import org.eih.atm.model.BankAccount;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Atm
 {
-    private BankAccount userAccount;
+    private List<BankAccount> bankAccountList;
     Scanner sc = new Scanner(System.in);
 
-
+    public Atm(){
+        this.bankAccountList = new ArrayList<>();
+    }
 
 
     public void printWelcome()
@@ -93,6 +97,15 @@ public class Atm
     }
 
     public boolean authenticate(String username, int pin) {
-        return username == userAccount.getOwner().getUsername() && pin == userAccount.getPin();
+        return username.equals(bankAccountList.get(0).getOwner().getUsername()) &&
+                pin == bankAccountList.get(0).getPin();
+    }
+
+    public List<BankAccount> getBankAccount() {
+        return bankAccountList;
+    }
+
+    public void setBankAccount(BankAccount ba) {
+        bankAccountList.add(ba);
     }
 }

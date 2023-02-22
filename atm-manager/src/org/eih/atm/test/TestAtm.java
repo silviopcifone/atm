@@ -27,20 +27,20 @@ public class TestAtm extends TestCase {
         atm = new Atm();
         ao = new AccountOwner("Emanuele","Valentini",25);
         ba = new BankAccount(10000, ao);
+        ao.setBankAccount(ba);
+        atm.setBankAccount(ba);
     }
 
 
     @Test
     public void testAuthentication(){
-        String username = "EmanueleValentini25";
-        int pin = 1234;
-        boolean isLoggedIn = this.atm.authenticate(username, pin);
+        boolean isLoggedIn = atm.authenticate(ao.getUsername(),ba.getPin());
         boolean expectedResult = true;
         assertEquals(expectedResult, isLoggedIn);
     }
 
     @Test
-    public void testFunctions() throws Exception {
-
+    public void testFunctions(){
+        
     }
 }

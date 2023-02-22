@@ -60,7 +60,4 @@ public class BankAccount
         return new Random().nextInt(8999) + 1000;
     }
 
-    public void addCounterToAO(){
-
-    }
 }
