@@ -1,23 +1,30 @@
 package org.eih.atm.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class AccountOwner extends User {
     private String username;
     private String ID;
-
     private int pin;
+
+    private List<BankAccount> bankAccounts;
+
 
     public AccountOwner(String name, String surname) {
         super(name, surname);
         this.username = name + surname;
         this.ID = 0 + surname;
+        bankAccounts = new ArrayList<>();
     }
 
     public AccountOwner(String name, String surname, int age) {
         super(name, surname, age);
+
         this.username = name + surname + age;
         this.ID = age * 2 + surname;
+        bankAccounts = new ArrayList<>();
     }
 
     @Override
@@ -56,5 +63,13 @@ public class AccountOwner extends User {
                 owner.getSurname() == this.getSurname() &&
                 owner.getID() == this.getID() &&
                 owner.username == this.getUsername();
+    }
+
+    public List<BankAccount> getBankAccount() {
+        return bankAccounts;
+    }
+
+    public void setBankAccount(BankAccount ba) {
+        this.bankAccounts.add(ba);
     }
 }

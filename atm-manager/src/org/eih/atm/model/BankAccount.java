@@ -9,7 +9,7 @@ public class BankAccount
     private int balanceAmount;
 
     private AccountOwner owner;
-    private int pin;
+    private final int pin;
 
     public BankAccount(int initialBalance, AccountOwner owner) {
         this.balanceAmount = initialBalance;
@@ -58,5 +58,9 @@ public class BankAccount
 
     public int generatePin() {
         return new Random().nextInt(8999) + 1000;
+    }
+
+    public void addCounterToAO(){
+
     }
 }
