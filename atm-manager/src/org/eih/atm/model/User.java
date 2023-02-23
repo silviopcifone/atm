@@ -15,12 +15,15 @@ public class User {
         this.name = name;
         this.surname = surname;
         this.username = name + surname;
+        this.ID = generateID();
     }
 
     public User(String name, String surname, int age) {
         this.name = name;
         this.surname = surname;
+        this.username = name + surname;
         this.age = age;
+        this.ID = generateID();
     }
 
     public String generateID(){

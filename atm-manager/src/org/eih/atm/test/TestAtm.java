@@ -120,10 +120,26 @@ public class TestAtm extends TestCase {
 
     @Test
     public void testStoricoOperazioni(){
-        String expectedOperation = "L'utente " + ao.getID() + " ha effettuato la seguente operazione "
-                + "Prelievo";
+        List<String> expectedOperations = new ArrayList<>();
+        expectedOperations.add("50Valentini Ha effettuato un Prelievo");
+        expectedOperations.add("50Valentini Ha effettuato un Prelievo");
+        expectedOperations.add("50Valentini Ha effettuato un Deposito");
+        expectedOperations.add("50Valentini Ha effettuato un controllo del saldo");
         atm.withdraw(10);
         atm.withdraw(100);
-        assertEquals(expectedOperation,atm.getOperation());
+        atm.deposit(100);
+        atm.getBalaceAmount();
+        atm.addOperation("50Valentini",atm.getOperations());
+        assertEquals(expectedOperations,atm.getOperations());
+    }
+
+    @Test
+    public void testStoricoTransazioni(){
+        List<Integer> expectedTransactions = new ArrayList<>();
+        expectedTransactions.add(-3000);
+        expectedTransactions.add(2000);
+        atm.withdraw(3000);
+        atm.deposit(2000);
+        assertEquals(expectedTransactions,atm.getTransactions());
     }
 }

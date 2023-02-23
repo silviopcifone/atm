@@ -18,6 +18,8 @@ public class Atm
 
     private List<String> operations = new ArrayList<>();
 
+    private List<Integer> transactions = new ArrayList<>();
+
     public boolean authenticate(String username, int pin) {
         return username.equals(bankAccountList.get(0).getOwner().getUsername()) &&
                 pin == bankAccountList.get(0).getPin();
@@ -35,17 +37,24 @@ public class Atm
         return bankAccountList.get(0).getBalanceAmount();
     }
 
+    public void getBalaceAmount(){
+        this.operations.add("Ha effettuato un controllo del saldo");
+        bankAccountList.get(0).getBalanceAmount();
+    }
+
     public void deposit(int deposit) {
+        this.operations.add("Ha effettuato un Deposito");
+        this.transactions.add(deposit);
         bankAccountList.get(0).setBalanceAmount(getBalance()+deposit);
-        this.operations.add("Deposito");
     }
 
     public void withdraw(int withdraw) throws AtmOperationException {
         if(withdraw > getBalance()){
             throw new AtmOperationException("Il valore del prelievo è troppo alto");
         }else{
+            this.operations.add("Ha effettuato un Prelievo");
+            this.transactions.add(-withdraw);
             bankAccountList.get(0).setBalanceAmount(getBalance()-withdraw);
-            this.operations.add("Prelievo");
         }
     }
 
@@ -62,8 +71,15 @@ public class Atm
         return operations;
     }
 
-    public String getOperation(){
-        return "L'utente " + bankAccountList.get(0).getOwner().getID() + " ha effettuato la seguente operazione "
-                + this.getOperations();
+    public void addOperation(String id, List<String> operations){
+        int i = 0;
+        for (String operation:operations) {
+            operations.set(i,(id+" "+operation));
+            i++;
+        }
+    }
+
+    public List<Integer> getTransactions() {
+        return transactions;
     }
 }

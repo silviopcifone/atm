@@ -14,16 +14,11 @@ public class AccountOwner extends User {
 
     public AccountOwner(String name, String surname) {
         super(name, surname);
-        this.username = name + surname;
-        this.ID = 0 + surname;
         bankAccounts = new ArrayList<>();
     }
 
     public AccountOwner(String name, String surname, int age) {
         super(name, surname, age);
-
-        this.username = name + surname + age;
-        this.ID = age * 2 + surname;
         bankAccounts = new ArrayList<>();
     }
 
