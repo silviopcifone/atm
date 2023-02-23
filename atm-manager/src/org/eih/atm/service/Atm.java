@@ -16,8 +16,7 @@ public class Atm
         this.bankAccountList = new ArrayList<>();
     }
 
-
-
+    private List<String> operations = new ArrayList<>();
 
     public boolean authenticate(String username, int pin) {
         return username.equals(bankAccountList.get(0).getOwner().getUsername()) &&
@@ -38,6 +37,7 @@ public class Atm
 
     public void deposit(int deposit) {
         bankAccountList.get(0).setBalanceAmount(getBalance()+deposit);
+        this.operations.add("Deposito");
     }
 
     public void withdraw(int withdraw) throws AtmOperationException {
@@ -45,6 +45,7 @@ public class Atm
             throw new AtmOperationException("Il valore del prelievo è troppo alto");
         }else{
             bankAccountList.get(0).setBalanceAmount(getBalance()-withdraw);
+            this.operations.add("Prelievo");
         }
     }
 
@@ -55,5 +56,14 @@ public class Atm
 
     public String getWelcome() {
         return "Benvenuto nell'atm";
+    }
+
+    public List<String> getOperations() {
+        return operations;
+    }
+
+    public String getOperation(){
+        return "L'utente " + bankAccountList.get(0).getOwner().getID() + " ha effettuato la seguente operazione "
+                + this.getOperations();
     }
 }

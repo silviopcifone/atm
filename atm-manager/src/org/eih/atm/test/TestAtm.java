@@ -6,6 +6,10 @@ import org.eih.atm.model.AccountOwner;
 import org.eih.atm.model.BankAccount;
 import org.eih.atm.service.Atm;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 
@@ -63,14 +67,6 @@ public class TestAtm extends TestCase {
         assertEquals(expectedBalance,atm.getBalance());
     }
 
-//    @Test
-//    public void testWithdrawalError() throws AtmOperationException {
-//        try{
-//            assertThrows(AtmOperationException, atm.withdraw(11000));
-//        }catch (Exception e){
-//            throw new RuntimeException(e);
-//        }
-//    }
 
     @Test
     public void testMenu(){
@@ -83,5 +79,51 @@ public class TestAtm extends TestCase {
     public void testWelcome(){
         String expectedWelcome = "Benvenuto nell'atm";
         assertEquals(expectedWelcome,atm.getWelcome());
+    }
+
+    @Test
+    public void testcreateUser(){
+        String name = "Valerio";
+        String surname = "Noce";
+        int age = 25;
+        AccountOwner ao1 = new AccountOwner(name,surname,age);
+        BankAccount ba1 = new BankAccount(ao1);
+        ao1.setBankAccount(ba1);
+        atm.setBankAccount(ba1);
+        String expectedName = "Valerio";
+        String expectedSurname = "Noce";
+        int expectedAge = 25;
+        assertEquals(expectedName,atm.getBankAccount().get(1).getOwner().getName());
+        assertEquals(expectedSurname,atm.getBankAccount().get(1).getOwner().getSurname());
+        assertEquals(expectedAge,atm.getBankAccount().get(1).getOwner().getAge());
+    }
+
+    @Test
+    public void testupdateUser(){
+        String name = "Valerio";
+        String surname = "Noce";
+        int age = 25;
+        AccountOwner ao1 = new AccountOwner(name,surname,age);
+        BankAccount ba1 = new BankAccount(ao1);
+        ao1.setBankAccount(ba1);
+        atm.setBankAccount(ba1);
+        atm.getBankAccount().get(1).getOwner().setName("Vale");
+        atm.getBankAccount().get(1).getOwner().setSurname("Nocino");
+        atm.getBankAccount().get(1).getOwner().setAge(28);
+        String expectedName = "Vale";
+        String expectedSurname = "Nocino";
+        int expectedAge = 28;
+        assertEquals(expectedName,atm.getBankAccount().get(1).getOwner().getName());
+        assertEquals(expectedSurname,atm.getBankAccount().get(1).getOwner().getSurname());
+        assertEquals(expectedAge,atm.getBankAccount().get(1).getOwner().getAge());
+    }
+
+    @Test
+    public void testStoricoOperazioni(){
+        String expectedOperation = "L'utente " + ao.getID() + " ha effettuato la seguente operazione "
+                + "Prelievo";
+        atm.withdraw(10);
+        atm.withdraw(100);
+        assertEquals(expectedOperation,atm.getOperation());
     }
 }
