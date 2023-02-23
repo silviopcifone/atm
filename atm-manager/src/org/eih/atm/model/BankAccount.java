@@ -7,7 +7,6 @@ public class BankAccount
 {
     private String ID;
     private int balanceAmount;
-
     private AccountOwner owner;
     private final int pin;
 
