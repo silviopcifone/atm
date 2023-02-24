@@ -1,5 +1,6 @@
 package atm2.model;
 
+import java.util.Objects;
 import java.util.Random;
 
 public class Account2 {
@@ -14,13 +15,15 @@ public class Account2 {
 
     }
     public Account2(int initialBalance, AccountOwner2 owner) {
-        this.initialBalance = initialBalance;
-        this.owner = owner;
+        setInitialBalance(initialBalance);
+        setOwner(owner);
+        setId();
     }
     public Account2(int initialBalance, AccountOwner2 owner, int pin) {
-        this.initialBalance = initialBalance;
-        this.owner = owner;
-        this.pin = pin;
+        setInitialBalance(initialBalance);
+        setOwner(owner);
+        setPin(pin);
+
     }
 
     public int getInitialBalance() {
@@ -39,8 +42,8 @@ public class Account2 {
         return Id;
     }
 
-    public void setId(String id) {
-        Id = id;
+    public void setId() {
+        Id = getInitialBalance() + getOwner().getName();
     }
 
     public int getPin() {
@@ -53,9 +56,6 @@ public class Account2 {
 
     public void setOwner(AccountOwner2 owner) {
         this.owner = owner;
-    }
-    public String getGeneratedID(){
-        return getInitialBalance() + getOwner().getName();
     }
 
     public int generatePin() {
@@ -79,10 +79,10 @@ public class Account2 {
     public void removeToBalance(int money) {
         this.initialBalance -= money;
     }
-/*
-    @Override
-    public int hashCode() {
-        return Objects.hash(initialBalance, owner, Id, pin);
-    }
-*/
+
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(initialBalance, owner, Id, pin);
+//    }
+
 }

@@ -1,6 +1,7 @@
 package atm2.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class AccountOwner2 {
@@ -9,7 +10,9 @@ public class AccountOwner2 {
     private String username;
     private String Id;
 
-    List<Account2> accounts = new ArrayList<>();
+
+    HashMap<String, Account2> accounts = new HashMap<>();
+    //List<Account2> accounts = new ArrayList<>();
     public byte age;
 
     public AccountOwner2(String name, String surname,byte age) {
@@ -77,10 +80,15 @@ public class AccountOwner2 {
     }
 
     public void setAccount(Account2 account) {
-        accounts.add(account);
+        accounts.put(account.getId(), account);
     }
-    public List<Account2> getAccounts() {
+    public HashMap<String, Account2> getAccounts() {
         return accounts;
     }
 
+    public void editData(String expectedName, String expectedSurname, byte expectedAge) {
+        setName(expectedName);
+        setSurname(expectedSurname);
+        setEta(expectedAge);
+    }
 }

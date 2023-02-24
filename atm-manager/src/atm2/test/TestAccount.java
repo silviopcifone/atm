@@ -60,7 +60,7 @@ public class TestAccount {
         Account2 account = new Account2(initialBalance, owner);
 
         String expectedID = 2000 + "Silvio";
-        assertEquals(expectedID, account.getGeneratedID());
+        assertEquals(expectedID, account.getId());
     }
 
     @Test
@@ -73,7 +73,6 @@ public class TestAccount {
         AccountOwner2 owner = new AccountOwner2(name, surname, age);
         Account2 account = new Account2(initialBalance, owner, expectedPin);
         Assert.assertEquals(expectedPin, account.getPin());
-
     }
 
     @Test
