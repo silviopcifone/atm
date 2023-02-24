@@ -5,9 +5,6 @@ import java.util.List;
 import java.util.Random;
 
 public class AccountOwner extends User {
-    private String username;
-    private String ID;
-    private int pin;
 
     private List<BankAccount> bankAccounts;
 
@@ -23,30 +20,6 @@ public class AccountOwner extends User {
     }
 
     @Override
-    public String getUsername() {
-        return username;
-    }
-
-    @Override
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    @Override
-    public String getID() {
-        return ID;
-    }
-
-    @Override
-    public void setID(String ID) {
-        this.ID = ID;
-    }
-
-    public int getPin() {
-        return pin;
-    }
-
-    @Override
     public boolean equals(Object obj) {
         if (obj == null) {
             return false;
@@ -57,7 +30,7 @@ public class AccountOwner extends User {
         return  owner.getName() == this.getName() &&
                 owner.getSurname() == this.getSurname() &&
                 owner.getID() == this.getID() &&
-                owner.username == this.getUsername();
+                owner.getUsername() == this.getUsername();
     }
 
     public List<BankAccount> getBankAccount() {

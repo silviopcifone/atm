@@ -21,7 +21,7 @@ public class User {
     public User(String name, String surname, int age) {
         this.name = name;
         this.surname = surname;
-        this.username = name + surname;
+        this.username = age * 2 + name + surname;
         this.age = age;
         this.ID = generateID();
     }

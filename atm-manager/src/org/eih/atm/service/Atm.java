@@ -1,6 +1,7 @@
 package org.eih.atm.service;
 
 import org.eih.atm.exception.AtmOperationException;
+import org.eih.atm.model.AccountOwner;
 import org.eih.atm.model.BankAccount;
 
 import java.util.ArrayList;
@@ -10,9 +11,11 @@ import java.util.Scanner;
 public class Atm
 {
     private List<BankAccount> bankAccountList;
+    private List<AccountOwner> accountOwners;
     Scanner sc = new Scanner(System.in);
 
     public Atm(){
+        this.accountOwners = new ArrayList<>();
         this.bankAccountList = new ArrayList<>();
     }
 
@@ -21,12 +24,20 @@ public class Atm
     private List<Integer> transactions = new ArrayList<>();
 
     public boolean authenticate(String username, int pin) {
-        return username.equals(bankAccountList.get(0).getOwner().getUsername()) &&
+        return username.equals(accountOwners.get(0).getUsername()) &&
                 pin == bankAccountList.get(0).getPin();
     }
 
     public List<BankAccount> getBankAccount() {
         return bankAccountList;
+    }
+
+    public List<AccountOwner> getAccountOwners() {
+        return accountOwners;
+    }
+
+    public void setAccountOwners(AccountOwner accountOwner) {
+        accountOwners.add(accountOwner);
     }
 
     public void setBankAccount(BankAccount ba) {
