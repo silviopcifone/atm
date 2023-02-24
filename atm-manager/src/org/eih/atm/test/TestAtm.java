@@ -35,15 +35,7 @@ public class TestAtm extends TestCase {
         ao = new AccountOwner("Emanuele","Valentini",25);
         ba = new BankAccount(10000, ao);
         ao.setBankAccount(ba);
-        atm.setBankAccount(ba);
-    }
-
-
-    @Test
-    public void testAuthentication(){
-        boolean isLoggedIn = atm.authenticate(ao.getUsername(),ba.getPin());
-        boolean expectedResult = true;
-        assertEquals(expectedResult, isLoggedIn);
+        atm.setBankAccount(ba.getID(),ba);
     }
 
     @Test
@@ -89,7 +81,7 @@ public class TestAtm extends TestCase {
         AccountOwner ao1 = new AccountOwner(name,surname,age);
         BankAccount ba1 = new BankAccount(ao1);
         ao1.setBankAccount(ba1);
-        atm.setBankAccount(ba1);
+        atm.setBankAccount(ba1.getID(),ba1);
         String expectedName = "Valerio";
         String expectedSurname = "Noce";
         int expectedAge = 25;
@@ -106,7 +98,7 @@ public class TestAtm extends TestCase {
         AccountOwner ao1 = new AccountOwner(name,surname,age);
         BankAccount ba1 = new BankAccount(ao1);
         ao1.setBankAccount(ba1);
-        atm.setBankAccount(ba1);
+        atm.setBankAccount(ba1.getID(),ba1);
         atm.getBankAccount().get(1).getOwner().setName("Vale");
         atm.getBankAccount().get(1).getOwner().setSurname("Nocino");
         atm.getBankAccount().get(1).getOwner().setAge(28);
@@ -128,7 +120,7 @@ public class TestAtm extends TestCase {
         atm.withdraw(10);
         atm.withdraw(100);
         atm.deposit(100);
-        atm.getBalaceAmount();
+        atm.getBalance();
         atm.addOperation("50Valentini",atm.getOperations());
         assertEquals(expectedOperations,atm.getOperations());
     }

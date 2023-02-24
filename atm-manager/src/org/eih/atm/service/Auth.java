@@ -21,6 +21,7 @@ public class Auth {
                 for(BankAccount ba:bankAccountList){
                     if(ba.getID().equals(id)){
                         if(ba.getPin() == pin){
+                            ba.setAuth();
                             return true;
                         }
                     }

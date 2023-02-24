@@ -10,6 +10,8 @@ public class BankAccount
     private AccountOwner owner;
     private final int pin;
 
+    private boolean auth = false;
+
     public BankAccount(int initialBalance, AccountOwner owner) {
         this.balanceAmount = initialBalance;
         this.owner = owner;
@@ -59,4 +61,7 @@ public class BankAccount
         return new Random().nextInt(8999) + 1000;
     }
 
+    public void setAuth(){
+        this.auth = !auth;
+    }
 }

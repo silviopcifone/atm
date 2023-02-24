@@ -20,7 +20,7 @@ public class TestAuth extends TestCase {
         ao = new AccountOwner("Emanuele","Valentini",25);
         ba = new BankAccount(10000, ao);
         ao.setBankAccount(ba);
-        atm.setBankAccount(ba);
+        atm.setBankAccount(ba.getID(),ba);
         au.setAccountOwnerList(ao);
         au.setBankAccountList(ba);
     }

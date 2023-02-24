@@ -4,31 +4,24 @@ import org.eih.atm.exception.AtmOperationException;
 import org.eih.atm.model.AccountOwner;
 import org.eih.atm.model.BankAccount;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Atm
 {
-    private List<BankAccount> bankAccountList;
+    private Map<String,BankAccount> bankAccountList;
     private List<AccountOwner> accountOwners;
     Scanner sc = new Scanner(System.in);
 
     public Atm(){
         this.accountOwners = new ArrayList<>();
-        this.bankAccountList = new ArrayList<>();
+        this.bankAccountList = new HashMap<>();
     }
 
     private List<String> operations = new ArrayList<>();
 
     private List<Integer> transactions = new ArrayList<>();
 
-    public boolean authenticate(String username, int pin) {
-        return username.equals(accountOwners.get(0).getUsername()) &&
-                pin == bankAccountList.get(0).getPin();
-    }
-
-    public List<BankAccount> getBankAccount() {
+    public Map<String,BankAccount> getBankAccount() {
         return bankAccountList;
     }
 
@@ -40,32 +33,27 @@ public class Atm
         accountOwners.add(accountOwner);
     }
 
-    public void setBankAccount(BankAccount ba) {
-        bankAccountList.add(ba);
+    public void setBankAccount(String ID,BankAccount ba) {
+        bankAccountList.put(ID,ba);
     }
 
-    public int getBalance() {
-        return bankAccountList.get(0).getBalanceAmount();
+    public int getBalance(String ID) {
+        return bankAccountList.get(ID).getBalanceAmount();
     }
 
-    public void getBalaceAmount(){
-        this.operations.add("Ha effettuato un controllo del saldo");
-        bankAccountList.get(0).getBalanceAmount();
-    }
-
-    public void deposit(int deposit) {
+    public void deposit(String ID,int deposit) {
         this.operations.add("Ha effettuato un Deposito");
         this.transactions.add(deposit);
-        bankAccountList.get(0).setBalanceAmount(getBalance()+deposit);
+        bankAccountList.get(ID).setBalanceAmount(getBalance(ID)+deposit);
     }
 
-    public void withdraw(int withdraw) throws AtmOperationException {
-        if(withdraw > getBalance()){
+    public void withdraw(String ID,int withdraw) throws AtmOperationException {
+        if(withdraw > getBalance(ID)){
             throw new AtmOperationException("Il valore del prelievo è troppo alto");
         }else{
             this.operations.add("Ha effettuato un Prelievo");
             this.transactions.add(-withdraw);
-            bankAccountList.get(0).setBalanceAmount(getBalance()-withdraw);
+            bankAccountList.get(ID).setBalanceAmount(getBalance(ID)-withdraw);
         }
     }
 
