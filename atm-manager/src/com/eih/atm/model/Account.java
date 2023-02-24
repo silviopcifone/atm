@@ -1,11 +1,11 @@
 package com.eih.atm.model;
 
-public class BankAccount {
+public class Account {
     private final int ID;
     private double balanceAmount;
-    private BankAccountOwner owner;
+    private AccountOwner owner;
 
-    public BankAccount() {
+    public Account() {
         ID = 1;
     }
 
