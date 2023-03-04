@@ -51,6 +51,6 @@ public class TestAcoountOwner {
         ao.setBankAccount(ba2);
         assertEquals(ba1, ao.getBankAccount().get(0));
         assertEquals(ba2, ao.getBankAccount().get(1));
-        
+
     }
 }
